@@ -22,6 +22,8 @@ $if(lang)$
 $endif$
 $if(papersize)$
   $papersize$paper,
+$else$
+  a4paper
 $endif$
 $if(beamer)$
   ignorenonframetext,
@@ -89,11 +91,11 @@ $endif$
 $if(beamerarticle)$
 \usepackage{beamerarticle} % needs to be loaded first
 $endif$
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amsthm,amssymb}
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
-\usepackage{lmodern}
+\usepackage{libertinus}
 $endif$
 $if(linestretch)$
 \usepackage{setspace}
@@ -103,6 +105,7 @@ $endif$
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
+  \usepackage[scr=boondoxo]{mathalfa}
 \else % if luatex or xetex
 $if(mathspec)$
   \ifXeTeX
